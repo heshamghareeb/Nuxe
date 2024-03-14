@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+
+<ngx-spinner
+  bdColor = "rgba(0,0,0,0.9)"
+  size = "medium"
+  color = "#fd7e14"
+  type = "ball-fussion"
+  [fullScreen] = "true">
+  <p style="color: #fd7e14" > Loading... </p>
+</ngx-spinner>
+
+<button (click)="goToUp()" #goUp class="go-up hide">
+  <i class="fa-solid fa-angle-up" style="color: #fd7e14"></i>
+</button>
+

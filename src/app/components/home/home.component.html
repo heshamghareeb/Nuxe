@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="p-4">
+      <input type="text" [(ngModel)]="char" class="form-control" name="" id="">
+    </div>
+
+    <div class="col-md-4 d-flex align-items-center">
+      <div>
+        <div class="brdr w-25 mb-3 "></div>
+        <h2 class="h5">Trending Movies <br/> To Watch Right Now</h2>
+        <p class="text-muted py-2">most watched Movies by The Day</p>
+        <div class="brdr w-100 mb-3 "></div>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-2 col-xl-2" *ngFor="let movie of trendingMovies | search:char">
+      <app-movie-card [item]="movie"></app-movie-card>
+    </div>
+
+  </div>
+
+  <div class="row py-5">
+    <div class="col-md-4 d-flex align-items-center">
+      <div>
+        <div class="brdr w-25 mb-3 "></div>
+        <h2 class="h5">Trending Tv <br/> To Watch Right Now</h2>
+        <p class="text-muted py-2">most watched Tv by The Day</p>
+        <div class="brdr w-100 mb-3 "></div>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-2 col-xl-2" *ngFor="let tv of trendingTv">
+      <app-movie-card  [item]="tv"></app-movie-card>
+    </div>
+
+  </div>
+
+  <div class="row py-5">
+    <div class="col-md-4 d-flex align-items-center">
+      <div>
+        <div class="brdr w-25 mb-3 "></div>
+        <h2 class="h5">Trending People <br/> To Watch Right Now</h2>
+        <p class="text-muted py-2">most watched People by The Day</p>
+        <div class="brdr w-100 mb-3 "></div>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-2 col-xl-2" *ngFor="let person of trendingpeople">
+      <app-actors  [item]="person"></app-actors>
+    </div>
+
+  </div>
+</div>

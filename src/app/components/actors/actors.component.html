@@ -1,0 +1,10 @@
+<div class="position-relative rounded-3">
+  <a [routerLink]="[item.gender?'/actorderails':'/moviedetails', item.id, item.media_type ?? 'movie']">
+    <!-- <img *ngIf="item.poster_path" class="w-100 rounded-3" [src]="'https://image.tmdb.org/t/p/w500/'+item.poster_path" alt=""> -->
+    <img *ngIf="item.profile_path" class="w-100" [src]="'https://image.tmdb.org/t/p/w500/'+item.profile_path" alt="">
+    <img *ngIf="!item.profile_path" class="w-100"style="height: 346px;" [src]="'https://www.indieactivity.com/wp-content/uploads/2022/03/File-Not-Found-Profile.jpg'" alt="">
+    <h3 class="h6 my-2 text-center ">{{item.title}} {{item.name}}</h3>
+    <!-- <p *ngIf="item.overview">{{item.overview | seemore:10}}</p> -->
+    <div *ngIf="item.vote_average" class="vote position-absolute p-2 top-0 end-0 text-white border-bottom-left-radius-5px">{{item.vote_average.toFixed(1)}}</div>
+  </a>
+</div>

@@ -1,0 +1,41 @@
+<div class="row contentCard container-fluid mt-5">
+
+  <div class="mt-0  col-md-5 col-12">
+    <img class="w-100 rounded  pb-2" [src]="'https://image.tmdb.org/t/p/w500/'+item.backdrop_path" alt="">
+    <img *ngIf="!item.poster_path && !item.backdrop_path" class="w-100" [src]="'https://www.indieactivity.com/wp-content/uploads/2022/03/File-Not-Found-Profile.jpg'" alt="">
+    <a [href]="item.homepage" target="_blank" class="custon-btn btn w-100 my-4">Watch it</a>
+  </div>
+
+  <div class="col-md-7 col-12 d-flex align-items-center">
+    <div class="">
+      <h3 class="my-2 fw-bold ">{{item.title}} {{item.name}}</h3>
+      <h3 class="mb-2 text-muted card-subtitle h6">{{item.tagline}} </h3>
+      <span *ngFor="let genre of item?.genres" class="me-3 mt-2 badge bg-primary badgeMovieDetails">{{genre.name}}</span>
+      <h6 class="pt-3 px-0 border-0 bg-transparent text-white list-group-item" *ngIf="item.vote_average">Vote : {{item.vote_average | number : '1.2-2'}}</h6>
+      <h6 class="pt-3" *ngIf="item.vote_count">Vote Count : {{item.vote_count}}</h6>
+      <h6 class="pt-3" *ngIf="item.popularity">Popularity : {{item.popularity}}</h6>
+      <h6 class="pt-3" *ngIf="item.release_date">Release date : {{item.release_date}}</h6>
+      <h6 class="pt-3" *ngIf="item.status">Status : {{item.status}}</h6>
+      <p *ngIf="item.overview" class="py-2 infoColor">{{item.overview}}</p>
+    </div>
+  </div>
+</div>
+
+<a>
+  <div class="row pt-5">
+    <div class="col-md-2" *ngFor="let item of similarMovies">
+
+      <div (click)="getSimilar(item.id, mediaType)" class="item position-relative">
+
+          <img *ngIf="item.poster_path" class="w-100" [src]="'https://image.tmdb.org/t/p/w500/'+item.poster_path" alt="">
+          <img *ngIf="!item.poster_path" class="w-100" [src]="'https://image.tmdb.org/t/p/w500/'+item.backdrop_path" alt="">
+          <img *ngIf="!item.poster_path && !item.backdrop_path" class="w-100" [src]="'https://www.indieactivity.com/wp-content/uploads/2022/03/File-Not-Found-Profile.jpg'" alt="">
+
+          <h3 class="h6 my-2 text-center ">{{item.title}} {{item.name}}</h3>
+          <div *ngIf="item.vote_average" class="vote position-absolute p-2 top-0 end-0 text-white">{{item.vote_average.toFixed(1)}}</div>
+
+      </div>
+
+    </div>
+  </div>
+</a>

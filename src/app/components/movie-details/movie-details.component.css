@@ -1,0 +1,37 @@
+.badgeMovieDetails{
+  background-color: var(--bs-orange) !important;
+    padding: 12px 14px 14px;
+}
+
+.contentCard {
+  font-family: 'Noto Serif Khojki', sans-serif;
+
+  background-color: transparent;
+}
+
+.infoColor{
+  color: #949cb0;
+}
+
+.custon-btn {
+  font-family: 'Courgette', cursive;
+  color: #fd7e14 !important;
+  background-color: transparent;
+  border: 1px solid #fd7e14 !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: white !important;
+    background-color: #fd7e14 !important;
+    box-shadow: none;
+    outline: 0;
+  }
+}
+img{
+  min-height: 350px;
+}
+.text-muted {
+  --bs-text-opacity: 1;
+  color: #6c757d !important;
+}

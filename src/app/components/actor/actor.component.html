@@ -1,0 +1,26 @@
+<div class="row contentCard container-fluid mt-3">
+
+  <div class="mt-0 col-md-4 col-12">
+    <img class="w-100 rounded  pb-2" [src]="'https://image.tmdb.org/t/p/w500/'+actorDetails.profile_path" alt="">
+    <img *ngIf="!actorDetails.profile_path" class="w-100" [src]="'https://www.indieactivity.com/wp-content/uploads/2022/03/File-Not-Found-Profile.jpg'" alt="">
+
+  </div>
+
+  <div class="col-md-7 col-12 d-flex align-actorDetailss-center">
+    <div class="">
+      <h3 class="my-2 fw-bold ">{{actorDetails.name}}</h3>
+      <h6 class="pt-3" *ngIf="actorDetails.birthday">Birthday : {{actorDetails.birthday}}</h6>
+      <h6 class="pt-3" *ngIf="actorDetails.popularity">popularity : {{actorDetails.popularity}}</h6>
+      <h6 class="pt-3" *ngIf="actorDetails.place_of_birth">Place of birth : {{actorDetails.place_of_birth}}</h6>
+      <p *ngIf="actorDetails.biography" class="py-2 infoColor">Biography :  {{actorDetails.biography | seemore:60}}</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="row mt-4">
+  <div class="col-sm-4 col-md-4 col-lg-2 col-xl-2" *ngFor="let movie of actorMovies">
+    <app-movie-card [item]="movie"></app-movie-card>
+  </div>
+</div>
+
